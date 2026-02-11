@@ -1,0 +1,173 @@
+@use '../../styles/variaveis.scss';
+@use '../../styles/mixins.scss';
+@use 'sass:color';
+
+.firstMain {
+  margin: 8% 5%;
+  display: flex;
+  justify-content: space-between;
+  background-image: url(../../assets/medico.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+
+  @media (max-width: variaveis.$breakpoint-header) {
+    background-image: none;
+    text-align: center;
+    justify-content: center;
+  }
+  
+
+  .mainTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2rem;
+    max-width: 560px;
+    min-height: 585px;
+
+    h1 {
+      font-size: 4.188rem;
+      font-weight: bold;
+      text-shadow: 0 4px 4px rgba($color: variaveis.$color-text-black, $alpha: 0.25);
+    }
+
+    p {
+      font-size: 1.563rem;
+
+      @media (max-width: variaveis.$breakpoint-header) {
+        text-align: center;
+      }
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 244px;
+      height: 55px;
+      padding: 10px;
+      border-radius: 30px;
+      background-color: variaveis.$color-light-gray;
+      font-weight: bold;
+
+      @media (max-width: variaveis.$breakpoint-header) {
+        margin: 0 auto;
+    }
+
+      img {
+        margin-right: 8px;
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 40px;
+
+      .linkVoluntario {
+        @include mixins.button(variaveis.$color-primary, variaveis.$color-white,  color.adjust(variaveis.$color-primary, $lightness: -10%));
+      }
+
+      .linkAjuda {
+        @include mixins.button(none, variaveis.$color-primary, variaveis.$color-light-gray);
+        color: variaveis.$color-primary;
+        border: 2px solid variaveis.$color-primary;
+      }
+
+      .linkVoluntario, .linkAjuda {
+        display: flex;
+        width: 100%;
+        padding: 0 auto;
+        text-align: center;
+        justify-content: center;  
+        align-items: center;
+      }
+
+      @media (max-width: variaveis.$breakpoint-header) {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.missao {
+  background-color: variaveis.$color-primary;
+  padding: 8% 5%;
+
+  h2,
+  p {
+    color: variaveis.$color-white;
+    @media (max-width: variaveis.$breakpoint-missao) {
+      text-align: center;
+    }
+  }
+
+  p {
+    margin: 30px 0;
+  }
+
+  .articles {
+    @include mixins.articles;
+    flex: 3;
+
+    article {
+      @include mixins.article;
+      color: variaveis.$color-white;
+      border-color: variaveis.$color-white;
+      max-width: 450px;
+      
+      h3 {
+        font-size: 1.875rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+.impacto {
+  padding: 8% 5%;
+
+  h2 {
+    font-size: 3.75rem;
+    font-weight: bold;
+
+    @media (max-width: variaveis.$breakpoint-missao) {
+      text-align: center;
+    }
+  }
+
+  h3 {
+    font-size: 3.125rem;
+    font-weight: bold;
+    color: variaveis.$color-primary;
+    margin-top: 1rem;
+  }
+
+  p {
+    margin: 30px 0;
+    
+    @media (max-width: variaveis.$breakpoint-missao) {
+      text-align: center;
+    }
+  }
+
+  .articles {
+    @include mixins.articles;
+
+    article {
+      @include mixins.article;
+      max-width: 317px;
+      min-width: 317px;
+      max-height: 244px;
+      min-height: 244px;
+      
+    }
+  }
+}

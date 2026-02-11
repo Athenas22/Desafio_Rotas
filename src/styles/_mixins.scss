@@ -1,0 +1,70 @@
+@use './variaveis';
+
+@mixin button ($backgroun, $cor-texto, $cor-hover) {
+    padding: 20px 30px;
+    border-radius: 11px;
+    background-color: $backgroun;
+    color: $cor-texto;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover
+     {
+        background-color: $cor-hover;
+        outline: none;
+    }
+}
+
+@mixin article {
+    border: 1px solid variaveis.$color-text-black;
+    border-radius: 14px;
+    padding: 44px 50px;
+    text-align: center;
+    
+    p {
+        margin-top: 30px;
+        font-size: 1.25rem;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@mixin articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+
+    
+    
+    @media (max-width: variaveis.$breakpoint-notebook) {
+        justify-content: center;
+      }
+}
+
+@mixin main {
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 8px;
+    }
+
+    .links {
+        h1 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            text-shadow: none;
+
+            &:hover {
+                font-weight: 800;
+            }
+        }
+    }
+}

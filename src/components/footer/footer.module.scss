@@ -1,0 +1,76 @@
+@use '../../styles/mixins';
+@use '../../styles/variaveis';
+
+footer {
+    background-color: variaveis.$color-footer-bg;
+    color: variaveis.$color-white; 
+
+    h3, .titulo {
+        font-size: 1rem;
+        padding: 16px 0;
+
+        @media (max-width: variaveis.$breakpoint-tablet) {
+            padding-top: 40px;
+        }
+    }
+    
+    p {
+        font-size: 0.875rem;
+    }
+}
+
+.footerCima {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2.7% 5%;
+}
+
+.footerMain {
+    margin: 0 17px;
+    .titulo {
+        @include mixins.main;
+        margin-bottom: 16px;
+        .links {
+            h1 {
+                color: variaveis.$color-white;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.contato {
+    margin: 0 17px;
+    .linkRedes {
+        .card {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        
+            img {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+.social {
+    margin: 0 17px;
+    .linkRedes {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: variaveis.$color-white;
+        }
+    }
+}
+
+.legenda {
+    text-align: center;
+    padding: 2% 5%;
+    border-top: 1px solid variaveis.$color-text-black;
+}
